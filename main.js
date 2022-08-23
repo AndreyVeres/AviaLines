@@ -1,4 +1,4 @@
-import AviaService from "./js/service.js"
+import AviaService from "./js/aviaService.js"
 
 const Avia = new AviaService()
 
@@ -8,6 +8,5 @@ const Avia = new AviaService()
 
 const btn = document.querySelector('.btn')
 btn.addEventListener('click', Avia.getKey)
-
 
 

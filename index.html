@@ -1,18 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <title>Document</title>
 </head>
+
 <body>
-    <input type="text" placeholder="priceStart" class="priceStart"> 
-    <input type="text" placeholder="priceEnd" class="priceEnd"> 
+    <input type="text" placeholder="priceStart" class="priceStart">
+    <input type="text" placeholder="priceEnd" class="priceEnd">
     <button class="btn">getTickets</button>
     <div class="ticket">
-      
+
+    </div>
+
+
+    <div class="container">
+        <div class="avia">
+            <form class="forn">
+                <h2>Количество пересадок</h2>
+                <input type="text">
+                <label for="all">Все
+                    <input type="checkbox" id="all" class="all">
+                </label>
+                <label for="without">
+                    Без пересадок
+                    <input type="checkbox" id="without">
+                </label>
+                <label for="one">
+                    Одна пересадка
+                    <input type="checkbox" id="one">
+                </label>
+                <label for="two">
+                    Две пересадки
+                    <input type="checkbox" id="two">
+                </label>
+                <label for="three">
+                    Три пересадки
+                    <input type="checkbox" id="three">
+                </label>
+              
+            </form>
+
+
+            <div class="tickets">
+                <div class="buttons">
+                    <button class="filterBtn cheap">Самый дешевый</button>
+                    <button class="filterBtn fast">Самый быстрый</button>
+                </div>
+
+                <div class="tickets__list">
+                    <div class="ticket">
+                        <div class="ticket__top">
+                            <p class="ticket__price">1000</p>
+                            <img src="#" alt="company" class="company">
+                        </div>
+
+                        <div class="ticket__descr">
+                            <div class="ticket__date">
+                                <p class="descr__title">MOW - HKT</p>
+                                <p class="time">10:45 - 08.00</p>
+                            </div>
+
+                            <div class="travelTime">
+                                <p class="descr__title">время в пути</p>
+                                <p class="descr__info">21ч</p>
+                            </div>
+
+                            <div class="transfer">
+                                <p class="descr__title">Пересадки</p>
+                                <p class="descr__info">hsa qwe</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
     <script type="module" src="main.js"></script>
 </body>
+
 </html>

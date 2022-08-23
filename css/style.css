@@ -1,0 +1,45 @@
+label {
+    display: block;
+}
+
+.container {
+    max-width: 1300px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.avia {
+    display: flex;
+    justify-content: space-evenly
+}
+
+.tickets {
+    width: 500px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+    margin-bottom: 50px;
+}
+
+.filterBtn {
+    width: 100%;
+}
+
+.ticket__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.ticket__descr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket {
+    border: 1px solid;
+    padding: 30px;
+    border-radius: 7px;
+}
