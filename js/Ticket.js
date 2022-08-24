@@ -1,6 +1,7 @@
 class CreateTicket {
     constructor(ticket) {
         this.price = ticket.price
+        
     }
 
     render() {

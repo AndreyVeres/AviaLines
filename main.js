@@ -5,8 +5,8 @@ const Avia = new AviaService()
 
 
 
-
+Avia.getkey()
 const btn = document.querySelector('.btn')
-btn.addEventListener('click', Avia.getKey)
+btn.addEventListener('click', Avia.getTickets)
 
 
