@@ -2,12 +2,23 @@ import AviaService from "./js/aviaService.js"
 
 const Avia = new AviaService()
 
+// const checkboxs = document.querySelectorAll('[type="checkbox"]')
+// console.log(checkboxs)
+
+const checkboxParent = document.querySelector('.forn')
+
+checkboxParent.addEventListener('click', async (e) => {
+
+    if (e.target.getAttribute('data-filter')) {
+        // const filter = e.target.getAttribute('data-filter')
+        Avia.getkey()
+    }
 
 
-// const show = document.querySelector('.show')
-// show.addEventListener('click', Avia.show)
-// Avia.getkey()
+})
+
+
 const btn = document.querySelector('.btn')
-btn.addEventListener('click', Avia.getkey)
+btn.addEventListener('click', Avia.getResource)
 
 
