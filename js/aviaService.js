@@ -6,21 +6,26 @@ class AviaService {
         this.tickets = []
     }
 
+    show = () => {
+        console.log(this.key, this.tickets)
+    }
+
 
     getkey = async () => {
+        this.tickets = []
         const res = await fetch('https://front-test.dev.aviasales.ru/search')
             .then(res => res.json())
             .then(res => this.key = res.searchId)
+
+        this.getTickets()
     }
 
     getTickets = async () => {
         const response = await fetch(`https://front-test.dev.aviasales.ru/tickets?searchId=${this.key}`)
-
         if (response.status === 502 || response.status === 500) {
             await this.getTickets()
         } else if (response.status !== 200) {
             console.error(response.statusText)
-            await new Promise((resolve) => setTimeout(resolve, 1000));
             await this.getTickets();
         } else {
             let ticketsPart = await response.json()
@@ -28,11 +33,33 @@ class AviaService {
             if (!ticketsPart.stop) {
                 await this.getTickets()
             } else {
-                console.log(this.tickets)
-                console.log(ticketsPart)
+                // const filter = this.makeFilter()
+                // this.transformRes(filter, this.tickets)
+                // console.log(this.tickets)
+                // this.transformRes(this.tickets)
             }
         }
+    }
 
+
+    sortPrice = (tickets) => {
+        // const { all, without, one, two, three } = filter
+        // const resultTickets = []
+        const sorted = tickets.sort((a, b) => a.price - b.price)
+        console.log(tickets)
+        console.log(sorted)
+    }
+
+
+    makeFilter = () => {
+        const filter = {
+            all: document.querySelector('.all').checked ? true : false,
+            without: document.querySelector('.without').checked ? true : false,
+            one: document.querySelector('.one').checked ? true : false,
+            two: document.querySelector('.two').checked ? true : false,
+            three: document.querySelector('.three').checked ? true : false,
+        }
+        return filter;
     }
 
 
