@@ -32,15 +32,8 @@ class AviaService {
             if (!ticketsPart.stop) {
                 await this.getTickets()
             } else {
-                const data = this.tickets
-                return data
-                console.log(this.tickets)
-                // const filter = this.makeFilter()
-                // const sortedTickets = this.sortStops(this.tickets, filter)
-                // console.log(sortedTickets)
-                // sortedTickets.forEach(item => {
-                //     new CreateTicket(item)
-                // })
+              console.log(this.tickets)
+              
             }
         }
     }
