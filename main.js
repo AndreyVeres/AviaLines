@@ -11,10 +11,8 @@ checkboxParent.addEventListener('click', async (e) => {
 
     if (e.target.getAttribute('data-filter')) {
         // const filter = e.target.getAttribute('data-filter')
-        Avia.getkey()
+        // const data = Avia.getkey()
     }
-
-
 })
 
 

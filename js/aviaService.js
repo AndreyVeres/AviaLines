@@ -15,8 +15,6 @@ class AviaService {
             .then(res => this.key = res.searchId)
 
         this.getTickets()
-
-
     }
 
     getTickets = async () => {
@@ -34,26 +32,15 @@ class AviaService {
             } else {
                 const data = this.tickets
                 return data
-                console.log(this.tickets)
-                // const filter = this.makeFilter()
-                // const sortedTickets = this.sortStops(this.tickets, filter)
-                // console.log(sortedTickets)
-                // sortedTickets.forEach(item => {
-                //     new CreateTicket(item)
-                // })
+
             }
         }
     }
 
 
-
-    sortStops = (filter, tickets) => {
-        console.log(filter)
-        return tickets.filter(item => {
-            return item.segments[0].stops.length === filter
-        }).slice(0, 5)
-    }
-    sortPrice = (tickets, filter) => {
+    sortPrice = (tickets) => {
+        // const { all, without, one, two, three } = filter
+        // const resultTickets = []
         const sorted = tickets.sort((a, b) => a.price - b.price)
         console.log(tickets)
         console.log(sorted)
@@ -70,6 +57,14 @@ class AviaService {
         }
         return filter;
     }
+
+
+
+
+
+
+
+
 
 }
 
