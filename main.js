@@ -1,25 +1,30 @@
-// import AviaService from "./js/aviaService.js"
-
-// const Avia = new AviaService()
-// Avia.getkey()
-// const checkboxs = document.querySelectorAll('[type="checkbox"]')
-// console.log(checkboxs)
-
 const checkboxParent = document.querySelector('.forn')
 
-checkboxParent.addEventListener('click', async (e) => {
-
-    if (e.target.getAttribute('data-filter')) {
-        const filter = e.target.getAttribute('data-filter')
-        console.log(filter)
-    }
-
-
-})
 
 
 
 let result;
+let sortedResult = []
+const filter = [];
+checkboxParent.addEventListener('click', (e) => {
+
+    if (e.target.getAttribute('data-filter')) {
+        // const currentFilter = e.target.getAttribute('data-filter')
+        const filter = []
+        let checkboxes = document.querySelectorAll('input[name="checkbox"]:checked')
+        checkboxes.forEach(item => {
+            filter.push(item.getAttribute('data-filter'))
+        })
+        // console.log(filter)  
+        let test = sortStops(result, filter)
+        console.log(test)
+        // console.log(filter)
+        // sortedResult = [...sortedResult, ...sortStops(filter, result)]
+        // sortedResult = Array.from(new Set([...sortedResult, ...sortStops(result, filter)]))
+
+    }
+})
+
 const getData = async () => {
     let data = []
     let key = ''
@@ -53,19 +58,15 @@ const getData = async () => {
         }
     }
     getkey()
-
-
-
 }
 
+const sortStops = (tickets, filter) => {
+    // if (filter === 'all') return tickets
 
-
-
-const sortStops = (filter, tickets) => {
-    console.log(filter)
     return tickets.filter(item => {
-        return item.segments[0].stops.length === filter
-    }).slice(0, 5)
+        let length = item.segments[0].stops.length
+        return filter.includes(parseInt(length))
+    })
 }
 const sortPrice = (tickets, filter) => {
     const sorted = tickets.sort((a, b) => a.price - b.price)
@@ -84,12 +85,4 @@ const makeFilter = () => {
 }
 
 
-// getData()
-// let data
-
-
-
-(async () => {
-    
-})()
-
+getData()
