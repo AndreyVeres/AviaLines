@@ -24,7 +24,7 @@
         <div class="avia">
             <form class="forn">
                 <h2>Количество пересадок</h2>
-                
+
                 <label for="all">Все
                     <input type="checkbox" id="all" class="all" data-filter="all" name="checkbox">
                 </label>
@@ -38,13 +38,13 @@
                 </label>
                 <label for="two">
                     Две пересадки
-                    <input type="checkbox" id="two" class="two"  data-filter="2" name="checkbox">
+                    <input type="checkbox" id="two" class="two" data-filter="2" name="checkbox">
                 </label>
                 <label for="three">
                     Три пересадки
-                    <input type="checkbox" id="three" class="three"  data-filter="3" name="checkbox">
+                    <input type="checkbox" id="three" class="three" data-filter="3" name="checkbox">
                 </label>
-              
+
             </form>
 
 
@@ -55,27 +55,46 @@
                 </div>
 
                 <div class="tickets__list">
+
                     <div class="ticket">
                         <div class="ticket__top">
                             <p class="ticket__price">1000</p>
                             <img src="#" alt="company" class="company">
                         </div>
 
-                        <div class="ticket__descr">
-                            <div class="ticket__date">
-                                <p class="descr__title">MOW - HKT</p>
-                                <p class="time">10:45 - 08.00</p>
+                        <div class="ticket__info">
+
+                            <div class="ticket__box">
+                                <h6 class="ticket__box-title date__start">MOW - HKT</h6>
+                                <p class="ticket__box-descr time__start">10:45 - 08:00</p>
                             </div>
 
-                            <div class="travelTime">
-                                <p class="descr__title">время в пути</p>
-                                <p class="descr__info">21ч</p>
+                            <div class="ticket__box">
+                                <h6 class="ticket__box-title">В пути</h6>
+                                <p class="ticket__box-descr walkTime__start">21:51</p>
                             </div>
 
-                            <div class="transfer">
-                                <p class="descr__title">Пересадки</p>
-                                <p class="descr__info">hsa qwe</p>
+                            <div class="ticket__box">
+                                <h6 class="ticket__box-title stops__start">Пересадки</h6>
+                                <p class="ticket__box-descr">HKG , JNB</p>
                             </div>
+
+
+                            <div class="ticket__box">
+                                <h6 class="ticket__box-title date__back">MOW - HKT</h6>
+                                <p class="ticket__box-descr time__back">10:45 - 08:00</p>
+                            </div>
+
+                            <div class="ticket__box">
+                                <h6 class="ticket__box-title">В пути</h6>
+                                <p class="ticket__box-descr walkTime__back">21:51</p>
+                            </div>
+
+                            <div class="ticket__box">
+                                <h6 class="ticket__box-title stops__back">Пересадки</h6>
+                                <p class="ticket__box-descr">HKG , JNB</p>
+                            </div>
+
 
                         </div>
                     </div>

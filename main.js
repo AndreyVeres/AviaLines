@@ -1,3 +1,4 @@
+import CreateTicket from "./js/Ticket.js";
 const checkboxParent = document.querySelector('.forn')
 
 
@@ -6,14 +7,18 @@ let allTickets;
 checkboxParent.addEventListener('click', (e) => {
 
     if (e.target.getAttribute('data-filter')) {
+
         const filter = []
         let checkboxes = document.querySelectorAll('input[name="checkbox"]:checked')
+
         checkboxes.forEach(item => {
             filter.push(item.getAttribute('data-filter'))
         })
-        let test = sortStops(allTickets, filter)
+        let test = sortStops(allTickets, filter).slice(0, 5)
         console.log(test)
-
+        test.forEach(item => {
+            new CreateTicket(item).render()
+        })
     }
 })
 
@@ -42,12 +47,8 @@ const getData = async () => {
             if (!ticketsPart.stop) {
                 await getTickets()
             } else {
-                // console.log(data)
                 allTickets = data
-                // console.log(result)
             }
-
-
         }
     }
     getkey()
@@ -63,7 +64,7 @@ const sortStops = (tickets, filter) => {
         }
     })
 }
-const sortPrice = (tickets, filter) => {
+const sortOn = (tickets, filter) => {
     const sorted = tickets.sort((a, b) => a.price - b.price)
     console.log(tickets)
     console.log(sorted)

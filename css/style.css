@@ -33,10 +33,13 @@ label {
     margin-bottom: 30px;
 }
 
-.ticket__descr {
-    display: flex;
-    justify-content: space-between;
+.ticket__info {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    justify-content: start;
 }
+
+
 
 .ticket {
     border: 1px solid;
