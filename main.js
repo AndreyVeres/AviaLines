@@ -15,7 +15,7 @@ checkboxParent.addEventListener('click', (e) => {
             filter.push(item.getAttribute('data-filter'))
         })
         let test = sortStops(allTickets, filter).slice(0, 5)
-        console.log(test)
+        console.log(test[1])
         test.forEach(item => {
             new CreateTicket(item).render()
         })
@@ -55,6 +55,7 @@ const getData = async () => {
 }
 
 const sortStops = (tickets, filter) => {
+    
     if (filter.includes('all')) return tickets
 
     return tickets.filter(item => {
@@ -82,3 +83,4 @@ const makeFilter = () => {
 
 
 getData()
+
